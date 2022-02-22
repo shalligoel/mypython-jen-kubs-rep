@@ -10,7 +10,7 @@ pipeline {
         stage('app') {
             steps {
                 echo 'Running App'
-                bat 'python3 app.py'
+                sh 'python3 app.py'
             }
         }
     }
