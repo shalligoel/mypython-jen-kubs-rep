@@ -1,0 +1,9 @@
+node('docker') {
+    stage 'Checkout'
+        checkout scm
+    stage 'Build & UnitTest'
+        sh "docker build -t myapp:1 -f Dockerfile ."
+  
+    stage 'Integration Test'
+        sh "docker run -p 5000:5000 myapp:1"
+}
