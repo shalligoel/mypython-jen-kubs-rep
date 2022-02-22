@@ -39,9 +39,7 @@ stage('Deployment Stage'){
           }
           
             
-            deleteDir()
 
-         }
         success {
           echo 'Build Successfull!!'
     }
@@ -54,5 +52,5 @@ stage('Deployment Stage'){
         changed {
             echo 'Hey look at this, Pipeline state is changed.'
         }
-    }
-}
+    
+
