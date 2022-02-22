@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+        stage('app') {
+            steps {
+                echo 'Running App'
+                bat 'python3 app.py'
+            }
+        }
+    }
+}
+
