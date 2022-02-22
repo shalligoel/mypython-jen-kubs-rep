@@ -5,7 +5,7 @@ node {
             checkout scm    
       }     
       stage('Build image') {         
-            app = docker.build("shalligoel/dockerhub:myapp")    
+            app = docker.build("shalligoel/training:myapp")    
        }     
       stage('Test image') {           
             app.inside {            
@@ -13,9 +13,8 @@ node {
             }    
         }     
        stage('Push image') {
-       docker.withRegistry('https://registry.hub.docker.com', 'git') {            
-       app.push("${env.BUILD_NUMBER}")            
-       app.peush("latest")        
+       docker.withRegistry('', 'git') {            
+       app.push("latest")        
               }    
            }
         }
