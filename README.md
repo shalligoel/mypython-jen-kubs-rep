@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # DevOps Pipeline <a href="https://en.wikipedia.org/wiki/DevOps" ><img src="Images/devops.jpg" width="50" height=30></a>
 - ## Background
    Before getting started, [click here](https://github.com/RitheeshBaradwaj/JenkinsPipeline/tree/master/Introduction) if you      want to know what is <b>CI/CD</b> <br>
@@ -108,3 +109,7 @@
     - [JFrog Artifactory](https://www.youtube.com/watch?v=WrKEozY9efQ)
 - ## Thank you :D
     I have used many online resources while creating the application and I would like to thank them. As I'm also in a learning stage, I would like to know your feedback and suggestions as well. So please contact me at: ritheeshbaradwaj@gmail.com. 
+=======
+### mypython-jen-kubs-rep
+
+>>>>>>> dca3c7cb0b933b3e7b33f3b4934b63787d3baf78
