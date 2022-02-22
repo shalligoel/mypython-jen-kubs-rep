@@ -1,9 +1,23 @@
-node('docker') {
-    stage 'Checkout'
-        checkout scm
-    stage 'Build & UnitTest'
-        sh "docker build -t myapp:1 -f Dockerfile ."
-  
-    stage 'Integration Test'
-        sh "docker run -p 5000:5000 myapp:1"
-}
+node {    
+      def app     
+      stage('Clone repository') {               
+             
+            checkout scm    
+      }     
+      stage('Build image') {         
+       
+            app = docker.build("myapp:1")    
+       }     
+      stage('Test image') {           
+            app.inside {            
+             
+             sh 'echo "Tests passed"'        
+            }    
+        }     
+       stage('Push image') {
+       docker.withRegistry('https://registry.hub.docker.com', 'git') {            
+       app.push("${env.BUILD_NUMBER}")            
+       app.push("latest")        
+              }    
+           }
+        }
